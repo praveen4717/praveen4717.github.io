@@ -2,133 +2,191 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Praveen Mudumala | Java Developer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praveen Mudumala | Java Lead Portfolio</title>
   <style>
     :root {
-      color-scheme: light;
-      color: #111827;
+      color: #0f172a;
       background: #f8fafc;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; }
-    .page { max-width: 1040px; margin: 0 auto; padding: 32px 24px; }
-    .hero { display: grid; gap: 24px; align-items: center; grid-template-columns: auto 1fr; padding: 32px; background: #ffffff; border-radius: 28px; box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08); }
-    .profile-pic { width: 150px; height: 150px; border-radius: 999px; object-fit: cover; border: 4px solid #e2e8f0; }
-    .eyebrow { text-transform: uppercase; letter-spacing: 0.22em; color: #6366f1; font-size: 0.82rem; margin: 0 0 12px; }
-    h1 { margin: 0; font-size: clamp(2.5rem, 3vw, 3.8rem); line-height: 1.05; }
-    .lead { margin: 16px 0 0; font-size: 1.05rem; line-height: 1.8; color: #475569; }
-    .button { display: inline-flex; align-items: center; justify-content: center; margin-top: 24px; padding: 14px 24px; border-radius: 999px; background: #1d4ed8; color: #ffffff; text-decoration: none; font-weight: 600; transition: transform 0.2s ease, background 0.2s ease; }
-    .button:hover { background: #2563eb; transform: translateY(-1px); }
-    .section { margin-top: 44px; }
-    .section h2 { font-size: 1.45rem; margin-bottom: 18px; color: #111827; }
-    .section p { color: #475569; line-height: 1.75; }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
-    .stat-card { padding: 22px; background: #ffffff; border-radius: 20px; border: 1px solid #e5e7eb; }
-    .stat-card strong { display: block; font-size: 2rem; color: #111827; }
-    .stat-card span { color: #6b7280; margin-top: 8px; display: block; }
-    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .card { padding: 24px; background: #ffffff; border-radius: 20px; border: 1px solid #e5e7eb; transition: transform 0.2s ease, border-color 0.2s ease; }
-    .card:hover { transform: translateY(-3px); border-color: #dbeafe; }
-    .card h3 { margin: 0 0 10px; font-size: 1.15rem; }
-    .card a { color: #1d4ed8; text-decoration: none; }
-    .card p { margin: 0; color: #475569; line-height: 1.7; }
-    .skill-list, .timeline, .contact-list { display: grid; gap: 12px; }
-    .skill-item, .timeline-item, .contact-item { display: flex; gap: 12px; align-items: flex-start; }
-    .skill-item::before, .timeline-item::before { content: ""; width: 10px; height: 10px; margin-top: 6px; border-radius: 999px; background: #1d4ed8; flex-shrink: 0; }
-    .skill-item span, .timeline-item span { color: #475569; }
-    .skill-name { font-weight: 600; color: #111827; }
-    .timeline-item strong { display: block; color: #111827; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top, rgba(59,130,246,0.18), transparent 38%), linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%); }
+    a { color: inherit; }
+    .site { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-radius: 24px; background: rgba(255,255,255,0.92); box-shadow: 0 18px 45px rgba(15,23,42,0.08); backdrop-filter: blur(12px); }
+    .brand { font-weight: 800; letter-spacing: -0.04em; font-size: 1.1rem; }
+    .brand span { color: #1d4ed8; }
+    .nav-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.95rem; color: #475569; }
+    .nav-links a { text-decoration: none; transition: color 0.2s ease; }
+    .nav-links a:hover { color: #1d4ed8; }
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: center; margin-top: 30px; padding: 42px; border-radius: 36px; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); box-shadow: 0 30px 100px rgba(15,23,42,0.08); }
+    .hero-copy { max-width: 640px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.25em; color: #2563eb; font-weight: 700; margin-bottom: 20px; }
+    .eyebrow::before { content: ""; width: 14px; height: 14px; border-radius: 999px; background: #bfdbfe; }
+    .hero-title { margin: 0; font-size: clamp(3rem, 4vw, 4.5rem); line-height: 0.98; letter-spacing: -0.05em; color: #0f172a; }
+    .hero-text { margin: 24px 0 0; max-width: 560px; color: #334155; font-size: 1.05rem; line-height: 1.8; }
+    .hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px; }
+    .button, .button-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; border-radius: 999px; font-weight: 700; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+    .button { background: #1d4ed8; color: #ffffff; box-shadow: 0 18px 35px rgba(59,130,246,0.25); }
+    .button:hover { transform: translateY(-2px); background: #2563eb; }
+    .button-secondary { border: 1px solid #cbd5e1; color: #0f172a; background: rgba(255,255,255,0.88); }
+    .hero-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 34px; }
+    .stat { padding: 22px 24px; background: #ffffff; border-radius: 24px; border: 1px solid #e2e8f0; }
+    .stat strong { font-size: 2.2rem; display: block; color: #0f172a; }
+    .stat span { color: #64748b; display: block; margin-top: 8px; }
+    .hero-image { display: grid; place-items: center; }
+    .hero-panel { width: 100%; min-height: 420px; border-radius: 32px; background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%); border: 1px solid rgba(148,163,184,0.3); box-shadow: 0 24px 60px rgba(15,23,42,0.07); padding: 26px; position: relative; overflow: hidden; }
+    .hero-panel::before { content: "Java Lead"; position: absolute; top: 22px; right: 24px; font-size: 0.88rem; color: #1d4ed8; opacity: 0.14; font-weight: 800; letter-spacing: 0.2em; }
+    .hero-panel-inner { display: grid; gap: 18px; }
+    .card-highlight { display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 24px; background: #ffffff; border-radius: 28px; border: 1px solid #e2e8f0; }
+    .card-highlight h3 { margin: 0 0 12px; font-size: 1.2rem; color: #0f172a; }
+    .card-highlight p { margin: 0; color: #475569; line-height: 1.75; }
+    .badge-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .badge { padding: 10px 14px; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-size: 0.87rem; font-weight: 700; }
+    .section { margin-top: 44px; opacity: 0; transform: translateY(18px); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .section:nth-of-type(2) { animation-delay: 0.2s; }
+    .section:nth-of-type(3) { animation-delay: 0.3s; }
+    .section:nth-of-type(4) { animation-delay: 0.4s; }
+    .section:nth-of-type(5) { animation-delay: 0.5s; }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
+    .section-header h2 { margin: 0; font-size: 1.85rem; color: #0f172a; }
+    .section-header p { margin: 0; color: #64748b; max-width: 700px; }
+    .info-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+    .info-card { padding: 24px; border-radius: 28px; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 18px 35px rgba(15,23,42,0.05); }
+    .info-card h3 { margin-top: 0; font-size: 1.05rem; color: #0f172a; }
+    .info-card p { margin: 12px 0 0; color: #475569; line-height: 1.75; }
+    .stack-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+    .stack-chip { padding: 12px 16px; border-radius: 18px; background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; font-size: 0.95rem; font-weight: 600; }
+    .top-area { display: grid; grid-template-columns: 1fr 1.05fr; gap: 24px; align-items: flex-start; }
+    .quote-card { padding: 26px; border-radius: 28px; background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%); border: 1px solid #dbeafe; }
+    .quote-card h3 { margin: 0 0 12px; font-size: 1.15rem; color: #0f172a; }
+    .quote-card p { margin: 0; color: #475569; line-height: 1.8; }
+    .portfolio-link { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #1d4ed8; text-decoration: none; }
+    .portfolio-link::after { content: '→'; font-size: 1.1rem; display: inline-block; transform: translateX(2px); }
+    .footer { margin: 52px 0 20px; color: #64748b; text-align: center; font-size: 0.95rem; opacity: 0; transform: translateY(18px); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards 0.55s; }
+    .contact-list { display: grid; gap: 12px; margin-top: 16px; }
+    .contact-item { display: flex; gap: 12px; align-items: baseline; color: #111827; }
     .contact-item strong { min-width: 110px; color: #6b7280; }
-    footer { margin: 56px 0 0; text-align: center; color: #9ca3af; font-size: 0.95rem; }
-    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; text-align: center; } .button { margin-left: auto; margin-right: auto; } .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 600px) { .stats-grid { grid-template-columns: 1fr; } }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 960px) { .hero, .top-area { grid-template-columns: 1fr; } .hero { padding: 26px; } .hero-stats { grid-template-columns: 1fr; } .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 680px) { .nav { flex-direction: column; align-items: flex-start; } .info-cards { grid-template-columns: 1fr; } .stack-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <div class="page">
-    <section class="hero">
-      <img src="https://avatars.githubusercontent.com/u/42336635?v=4" alt="Praveen Mudumala" class="profile-pic">
-      <div>
-        <p class="eyebrow">Senior Java Developer</p>
-        <h1>Praveen Mudumala</h1>
-        <p class="lead">Experienced Java engineer with 7 years of software delivery across enterprise applications, microservices, and cloud-native systems. I build reliable backend platforms, automate delivery pipelines, and contribute to open source on GitHub.</p>
-        <a class="button" href="https://github.com/praveen4717" target="_blank" rel="noreferrer">View GitHub profile</a>
-      </div>
-    </section>
+  <div class="site">
+    <header class="nav">
+      <div class="brand">Praveen <span>Mudumala</span></div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="resume.html">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <section class="section about">
-      <h2>Professional summary</h2>
-      <p>Seasoned Java developer skilled in Spring Boot, REST API design, microservices architecture, and relational databases. I have 7 years of experience delivering production systems for business-critical applications, optimizing performance, and mentoring engineering teams.</p>
-      <div class="stats-grid">
-        <div class="stat-card"><strong>7+</strong><span>Years experience</span></div>
-        <div class="stat-card"><strong>8</strong><span>Public repositories</span></div>
-        <div class="stat-card"><strong>Bengaluru</strong><span>Location</span></div>
-        <div class="stat-card"><strong>@mindsprint</strong><span>Current company</span></div>
-      </div>
-    </section>
-
-    <section class="section skills">
-      <h2>Core skills</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Technical skills</h3>
-          <div class="skill-list">
-            <div class="skill-item"><span class="skill-name">Java 17+</span><span>Modern Java development for backend systems.</span></div>
-            <div class="skill-item"><span class="skill-name">Spring Boot</span><span>Microservices, dependency injection, and REST API design.</span></div>
-            <div class="skill-item"><span class="skill-name">Microservices</span><span>Service decomposition, inter-service communication, and resiliency.</span></div>
-            <div class="skill-item"><span class="skill-name">AWS & Docker</span><span>Cloud deployments, containers, and infrastructure automation.</span></div>
-            <div class="skill-item"><span class="skill-name">CI/CD</span><span>GitHub Actions, build pipelines, and release automation.</span></div>
-            <div class="skill-item"><span class="skill-name">SQL & NoSQL</span><span>Database design, query optimization, and persistence architecture.</span></div>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Delivery strengths</h3>
-          <div class="skill-list">
-            <div class="skill-item"><span class="skill-name">System design</span><span>Designing scalable, maintainable backend services.</span></div>
-            <div class="skill-item"><span class="skill-name">Code quality</span><span>Unit testing, integration testing, and clean architecture.</span></div>
-            <div class="skill-item"><span class="skill-name">Collaboration</span><span>Cross-functional delivery with product, QA, and operations.</span></div>
-            <div class="skill-item"><span class="skill-name">Mentorship</span><span>Guiding junior developers and sharing best practices.</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <strong>Senior Java Developer — Mindsprint</strong>
-          <span>Design and deliver enterprise backend systems using Java, Spring Boot, and AWS. Lead microservices migration, build CI/CD workflows, and improve system reliability.</span>
+    <main class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Java Lead • 7+ years</div>
+        <h1 class="hero-title">Building enterprise Java systems with modern cloud-native architecture.</h1>
+        <p class="hero-text">I am a Java Lead with expertise in Spring Boot, microservices, AWS, Docker, and CI/CD. I deliver high-performance backend platforms, streamline engineering workflows, and drive scalable product outcomes.</p>
+        <div class="hero-actions">
+          <a class="button" href="portfolio.html">Explore portfolio</a>
+          <a class="button-secondary" href="resume.html">View resume</a>
         </div>
-        <div class="timeline-item">
-          <strong>Java Engineer — Enterprise applications</strong>
-          <span>Implemented REST APIs, optimized database performance, and automated deployment pipelines for business-critical applications.</span>
+        <div class="hero-stats">
+          <div class="stat"><strong>7+</strong><span>Years in Java engineering</span></div>
+          <div class="stat"><strong>8</strong><span>Public repos</span></div>
+          <div class="stat"><strong>100%</strong><span>Java backend delivery</span></div>
+          <div class="stat"><strong>20+</strong><span>APIs built</span></div>
         </div>
       </div>
-    </section>
 
-    <section class="section projects">
-      <h2>Highlighted GitHub work</h2>
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://github.com/praveen4717/praveen4717.github.io" target="_blank" rel="noreferrer">Personal portfolio</a></h3>
-          <p>GitHub Pages site showcasing my professional profile, project highlights, and technical skills.</p>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/praveen4717/openai" target="_blank" rel="noreferrer">AI and automation</a></h3>
-          <p>Projects exploring API integrations, automation workflows, and model-driven developer tooling.</p>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/praveen4717/multimodel" target="_blank" rel="noreferrer">Multimodel experiments</a></h3>
-          <p>Repository focused on multi-model support, orchestration, and prototype applications.</p>
-        </article>
+      <div class="hero-image">
+        <div class="hero-panel">
+          <div class="hero-panel-inner">
+            <div class="card-highlight">
+              <h3>Leadership + Delivery</h3>
+              <p>Lead cross-functional teams to ship mission-critical services, mentor developers, and improve deployment velocity with automated pipelines.</p>
+              <div class="badge-list">
+                <span class="badge">Spring Boot</span>
+                <span class="badge">Microservices</span>
+                <span class="badge">AWS</span>
+                <span class="badge">GitHub Actions</span>
+              </div>
+            </div>
+            <div class="card-highlight">
+              <h3>Open source focus</h3>
+              <p>Share reusable tools, prototypes, and integrations on GitHub while keeping code quality, architecture, and observability front and center.</p>
+              <div class="badge-list">
+                <span class="badge">REST APIs</span>
+                <span class="badge">Docker</span>
+                <span class="badge">Cloud Native</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <p>Driven Java Lead with a strong record of building resilient backend systems, optimizing performance, and leading high-impact engineering teams in enterprise environments.</p>
+      </div>
+      <div class="top-area">
+        <div class="quote-card">
+          <h3>What I do best</h3>
+          <p>Architect and deliver scalable Java-based platforms, from API design to containerized deployment. I care deeply about maintainable code, fast feedback loops, and business-aligned engineering.</p>
+        </div>
+        <div class="info-cards">
+          <div class="info-card"><h3>Enterprise systems</h3><p>Developing robust backend services for payment, logistics, and SaaS applications with secure, high-throughput architecture.</p></div>
+          <div class="info-card"><h3>Cloud-native delivery</h3><p>Implementing AWS-based workflows, Dockerized services, and GitHub Actions to automate staging, testing, and releases.</p></div>
+          <div class="info-card"><h3>Mentorship</h3><p>Coaching engineers on clean code, test automation, and scalable system design to accelerate team performance.</p></div>
+        </div>
       </div>
     </section>
 
-    <section class="section contact">
-      <h2>Connect</h2>
+    <section id="skills" class="section">
+      <div class="section-header">
+        <h2>Tech stack</h2>
+        <p>Core tools and frameworks I use daily to build Java backend systems, integrations, and developer workflows.</p>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-chip">Java 17+</div>
+        <div class="stack-chip">Spring Boot</div>
+        <div class="stack-chip">Spring Cloud</div>
+        <div class="stack-chip">REST APIs</div>
+        <div class="stack-chip">AWS (ECS, Lambda)</div>
+        <div class="stack-chip">Docker / Kubernetes</div>
+        <div class="stack-chip">GitHub Actions</div>
+        <div class="stack-chip">MySQL / PostgreSQL</div>
+        <div class="stack-chip">NoSQL</div>
+        <div class="stack-chip">Microservices</div>
+        <div class="stack-chip">Observability</div>
+        <div class="stack-chip">JUnit / Mockito</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Why work with me</h2>
+        <p>I bring a combination of technical depth, leadership experience, and a strong delivery mindset for Java-centric, cloud-first software teams.</p>
+      </div>
+      <div class="info-cards">
+        <div class="info-card"><h3>Fast delivery</h3><p>Ship features faster with reliable APIs, automated tests, and CI/CD pipelines that reduce cycle time.</p></div>
+        <div class="info-card"><h3>Scalable architecture</h3><p>Design services that support growth, handle complexity, and remain maintainable over time.</p></div>
+        <div class="info-card"><h3>Team enablement</h3><p>Raise engineering quality and productivity through mentorship, code reviews, and strong tooling.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2>Get in touch</h2>
+        <p>Ready to collaborate on Java systems, enterprise software, or cloud-native solutions? Let's connect over GitHub or email.</p>
+      </div>
       <div class="contact-list">
         <div class="contact-item"><strong>GitHub</strong><a href="https://github.com/praveen4717" target="_blank" rel="noreferrer">github.com/praveen4717</a></div>
         <div class="contact-item"><strong>Location</strong><span>Bengaluru, India</span></div>
@@ -137,7 +195,7 @@
       </div>
     </section>
 
-    <footer>Java developer portfolio built for GitHub Pages.</footer>
+    <footer class="footer">Designed for GitHub Pages with a modern Java lead portfolio style.</footer>
   </div>
 </body>
 </html>
