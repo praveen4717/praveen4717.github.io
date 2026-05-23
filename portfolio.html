@@ -27,6 +27,8 @@
     .subtitle { margin: 20px 0 0; color: #475569; font-size: 1rem; line-height: 1.8; max-width: 760px; }
     .button { display: inline-flex; align-items: center; justify-content: center; margin-top: 24px; padding: 14px 24px; border-radius: 999px; background: #1d4ed8; color: #ffffff; text-decoration: none; font-weight: 700; transition: transform 0.2s ease, background 0.2s ease; }
     .button:hover { transform: translateY(-2px); background: #2563eb; }
+    .badge-bar { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+    .badge-pill { padding: 10px 14px; border-radius: 999px; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.22); color: #1d4ed8; font-size: 0.9rem; font-weight: 700; }
     .animated { opacity: 0; animation: fadeIn 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
     .project-card { opacity: 0; transform: translateY(18px); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
     .project-card:nth-of-type(1) { animation-delay: 0.12s; }
@@ -54,6 +56,10 @@
     .badge-card { padding: 24px; border-radius: 28px; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 18px 35px rgba(15,23,42,0.05); }
     .badge-card h3 { margin: 0 0 10px; font-size: 1.05rem; color: #0f172a; }
     .badge-card p { margin: 0; color: #475569; line-height: 1.75; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+    .feature-card { padding: 24px; border-radius: 28px; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 18px 35px rgba(15,23,42,0.05); }
+    .feature-card h3 { margin: 0 0 12px; font-size: 1.05rem; color: #0f172a; }
+    .feature-card p { margin: 0; color: #475569; line-height: 1.75; }
     .callout { margin-top: 40px; padding: 28px; border-radius: 30px; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); border: 1px solid #dbeafe; box-shadow: 0 22px 50px rgba(59,130,246,0.12); }
     .callout h3 { margin: 0 0 14px; font-size: 1.4rem; color: #0f172a; }
     .callout p { margin: 0; color: #475569; line-height: 1.8; }
@@ -78,10 +84,20 @@
       </nav>
     </header>
 
+    <div class="badge-bar animated">
+      <span class="badge-pill">Spring AI chatbot</span>
+      <span class="badge-pill">RAG</span>
+      <span class="badge-pill">Twilio WhatsApp OTP</span>
+      <span class="badge-pill">IVR</span>
+      <span class="badge-pill">DocuSign</span>
+      <span class="badge-pill">RabbitMQ</span>
+      <span class="badge-pill">Redis cache</span>
+    </div>
+
     <section class="hero animated">
       <div class="eyebrow">Portfolio showcase</div>
       <h1 class="title">Java lead projects with enterprise performance, observability, and shipping velocity.</h1>
-      <p class="subtitle">A collection of my most compelling GitHub work and backend engineering efforts, including production-grade APIs, AWS/Azure cloud-native services, and team-focused delivery patterns.</p>
+      <p class="subtitle">A collection of my most compelling GitHub work and backend engineering efforts, including Spring AI chatbot experiments, Twilio WhatsApp OTP and IVR call integration, DocuSign e-signature workflows, RAG-powered knowledge retrieval, AWS/Azure cloud-native services, and team-focused delivery patterns.</p>
       <a class="button" href="index.html">Return to home</a>
     </section>
 
@@ -96,10 +112,10 @@
           <div class="tech-list"><span class="tech-chip">HTML</span><span class="tech-chip">CSS</span><span class="tech-chip">GitHub Pages</span></div>
         </article>
         <article class="project-card">
-          <h3>OpenAI integration experiments</h3>
-          <p>Repository exploring API integrations and intelligent automation workflows that support developer tooling and productivity.</p>
+          <h3>Spring AI chatbot experiments</h3>
+          <p>Repository exploring Spring AI chatbot integration and RAG-enabled conversational workflows for intelligent Java applications.</p>
           <a href="https://github.com/praveen4717/openai" target="_blank" rel="noreferrer">View repo</a>
-          <div class="tech-list"><span class="tech-chip">API design</span><span class="tech-chip">Automation</span><span class="tech-chip">Prototype</span></div>
+          <div class="tech-list"><span class="tech-chip">Spring AI</span><span class="tech-chip">RAG</span><span class="tech-chip">API design</span></div>
         </article>
         <article class="project-card">
           <h3>Multimodel orchestration</h3>
@@ -126,10 +142,25 @@
       <h2>Primary technology stack</h2>
       <p>Strong command of Java enterprise technology and cloud-native toolchains that power modern backend platforms.</p>
       <div class="badge-grid">
-        <div class="badge-card"><h3>Java & Spring</h3><p>Java 17+, Spring Boot, Spring Cloud, REST API design, Spring Security, and backend service patterns.</p></div>
-        <div class="badge-card"><h3>Cloud & deployment</h3><p>AWS, Azure, Docker, container orchestration, infrastructure-as-code patterns, and cloud automation.</p></div>
+        <div class="badge-card"><h3>Java & Spring</h3><p>Java 17+, Spring Boot, Spring AI, RAG, Spring Cloud, REST API design, Spring Security, and backend service patterns.</p></div>
+        <div class="badge-card"><h3>Cloud & deployment</h3><p>AWS, Azure, Docker, container orchestration, RabbitMQ, Redis, infrastructure-as-code patterns, and cloud automation.</p></div>
         <div class="badge-card"><h3>Delivery & testing</h3><p>GitHub Actions, CI/CD pipelines, unit/integration testing, quality gates, and release automation.</p></div>
         <div class="badge-card"><h3>Data systems</h3><p>MySQL, PostgreSQL, DynamoDB, caching, and persistence optimization for resilient backend services.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>AI + communications</h2>
+        <p>Integrated solutions for chatbots, conversational authentication, digital signature workflows, messaging, and caching at enterprise scale.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><h3>Spring AI chatbots</h3><p>Build intelligent conversational services that connect directly to Java backend workflows.</p></div>
+        <div class="feature-card"><h3>WhatsApp OTP & IVR</h3><p>Authenticate users with Twilio-powered WhatsApp OTP and voice IVR call flows.</p></div>
+        <div class="feature-card"><h3>DocuSign workflows</h3><p>Automate document approvals and digital signatures inside enterprise processes.</p></div>
+        <div class="feature-card"><h3>RabbitMQ messaging</h3><p>Deliver event-driven architecture with reliable messaging and microservice coordination.</p></div>
+        <div class="feature-card"><h3>Redis cache</h3><p>Improve response performance and session handling with Redis caching strategies.</p></div>
+        <div class="feature-card"><h3>RAG knowledge</h3><p>Use retrieval-augmented generation to make chatbots more context-aware and enterprise-ready.</p></div>
       </div>
     </section>
 
@@ -138,6 +169,7 @@
         <h3>Ready to partner on Java-led software delivery?</h3>
         <p>Whether you need backend architecture, cloud migration, or platform modernization, I can help your team ship faster with reliable systems and stronger engineering processes.</p>
         <p style="margin-top:18px;"><strong>Connect:</strong> <a href="https://github.com/praveen4717" target="_blank" rel="noreferrer">github.com/praveen4717</a> • Email: mpraveen4717@gmail.com</p>
+        <p style="margin-top:8px; color:#334155;">Trend focus: Spring AI chatbots, retrieval-augmented generation (RAG), and conversational enterprise automation.</p>
       </div>
     </section>
 

@@ -72,6 +72,12 @@
     .quote-card p { margin: 0; color: #475569; line-height: 1.8; }
     .portfolio-link { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #1d4ed8; text-decoration: none; }
     .portfolio-link::after { content: '→'; font-size: 1.1rem; display: inline-block; transform: translateX(2px); }
+    .badge-bar { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+    .badge-pill { padding: 10px 14px; border-radius: 999px; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.22); color: #1d4ed8; font-size: 0.9rem; font-weight: 700; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+    .feature-card { padding: 24px; border-radius: 28px; background: #ffffff; border: 1px solid #dbeafe; box-shadow: 0 18px 35px rgba(15,23,42,0.05); }
+    .feature-card h3 { margin: 0 0 12px; font-size: 1.15rem; color: #0f172a; }
+    .feature-card p { margin: 0; color: #475569; line-height: 1.75; }
     .footer { margin: 52px 0 20px; color: #64748b; text-align: center; font-size: 0.95rem; opacity: 0; transform: translateY(18px); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards 0.55s; }
     .contact-list { display: grid; gap: 12px; margin-top: 16px; }
     .contact-item { display: flex; gap: 12px; align-items: baseline; color: #111827; }
@@ -94,11 +100,21 @@
       </nav>
     </header>
 
+    <div class="badge-bar animated">
+      <span class="badge-pill">Spring AI chatbot</span>
+      <span class="badge-pill">RAG</span>
+      <span class="badge-pill">Twilio WhatsApp OTP</span>
+      <span class="badge-pill">IVR</span>
+      <span class="badge-pill">DocuSign</span>
+      <span class="badge-pill">RabbitMQ</span>
+      <span class="badge-pill">Redis cache</span>
+    </div>
+
     <main class="hero animated">
       <div class="hero-copy">
         <div class="eyebrow">Java Lead • 7+ years</div>
         <h1 class="hero-title">Building enterprise Java systems with modern cloud-native architecture.</h1>
-        <p class="hero-text">I am a Java Lead with expertise in Spring Boot, microservices, AWS, Azure, Docker, and CI/CD. I deliver high-performance backend platforms, streamline engineering workflows, and drive scalable product outcomes.</p>
+        <p class="hero-text">I am a Java Lead with expertise in Spring Boot, Spring AI, chatbot development, RAG, Twilio WhatsApp OTP, IVR call flows, DocuSign e-signature, RabbitMQ messaging, Redis cache, AWS, Azure, Docker, and CI/CD. I deliver high-performance backend platforms, secure communication workflows, and scalable product outcomes.</p>
         <div class="hero-actions">
           <a class="button" href="portfolio.html">Explore portfolio</a>
           <a class="button-secondary" href="resume.html">View resume</a>
@@ -119,6 +135,7 @@
               <p>Lead cross-functional teams to ship mission-critical services, mentor developers, and improve deployment velocity with automated pipelines.</p>
               <div class="badge-list">
                 <span class="badge">Spring Boot</span>
+                <span class="badge">Spring AI</span>
                 <span class="badge">Microservices</span>
                 <span class="badge">AWS</span>
                 <span class="badge">Azure</span>
@@ -151,7 +168,7 @@
         </div>
         <div class="info-cards">
           <div class="info-card"><h3>Enterprise systems</h3><p>Developing robust backend services for payment, logistics, and SaaS applications with secure, high-throughput architecture.</p></div>
-          <div class="info-card"><h3>Cloud-native delivery</h3><p>Implementing AWS and Azure-based workflows, Dockerized services, and GitHub Actions to automate staging, testing, and releases.</p></div>
+          <div class="info-card"><h3>Cloud-native delivery</h3><p>Implementing AWS and Azure-based workflows, Twilio WhatsApp OTP and IVR call flows, DocuSign e-signature integrations, RabbitMQ messaging, Redis caching, Dockerized deployments, and GitHub Actions to automate staging, testing, and releases.</p></div>
           <div class="info-card"><h3>Mentorship</h3><p>Coaching engineers on clean code, test automation, and scalable system design to accelerate team performance.</p></div>
         </div>
       </div>
@@ -165,6 +182,13 @@
       <div class="stack-grid">
         <div class="stack-chip">Java 17+</div>
         <div class="stack-chip">Spring Boot</div>
+        <div class="stack-chip">Spring AI</div>
+        <div class="stack-chip">RAG / Retrieval AI</div>
+        <div class="stack-chip">Twilio WhatsApp OTP</div>
+        <div class="stack-chip">IVR call flows</div>
+        <div class="stack-chip">DocuSign e-sign</div>
+        <div class="stack-chip">RabbitMQ</div>
+        <div class="stack-chip">Redis cache</div>
         <div class="stack-chip">Spring Cloud</div>
         <div class="stack-chip">REST APIs</div>
         <div class="stack-chip">AWS & Azure</div>
@@ -187,6 +211,21 @@
         <div class="info-card"><h3>Fast delivery</h3><p>Ship features faster with reliable APIs, automated tests, and CI/CD pipelines that reduce cycle time.</p></div>
         <div class="info-card"><h3>Scalable architecture</h3><p>Design services that support growth, handle complexity, and remain maintainable over time.</p></div>
         <div class="info-card"><h3>Team enablement</h3><p>Raise engineering quality and productivity through mentorship, code reviews, and strong tooling.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>AI + communication integrations</h2>
+        <p>Modern enterprise systems that combine Spring AI chatbots, RAG knowledge retrieval, Twilio messaging, DocuSign e-signatures, RabbitMQ event streaming, and Redis caching.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><h3>Spring AI chatbot</h3><p>Conversational AI flows powered by Spring AI for support, automation, and seamless user experiences.</p></div>
+        <div class="feature-card"><h3>RAG pipelines</h3><p>Retrieval-augmented generation for smarter knowledge retrieval, contextual responses, and enterprise-ready knowledge graphs.</p></div>
+        <div class="feature-card"><h3>Twilio WhatsApp & IVR</h3><p>Secure OTP verification on WhatsApp and voice IVR workflows for customer authentication and engagement.</p></div>
+        <div class="feature-card"><h3>DocuSign integration</h3><p>Digital signature workflows that automate approval, contract signing, and e-sign compliance.</p></div>
+        <div class="feature-card"><h3>RabbitMQ messaging</h3><p>Reliable event-driven communication across microservices for asynchronous processing and system resilience.</p></div>
+        <div class="feature-card"><h3>Redis caching</h3><p>Fast in-memory caching for session state, low-latency retrieval, and high-performance service responses.</p></div>
       </div>
     </section>
 
