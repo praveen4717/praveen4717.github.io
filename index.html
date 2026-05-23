@@ -33,8 +33,14 @@
     .button { background: #1d4ed8; color: #ffffff; box-shadow: 0 18px 35px rgba(59,130,246,0.25); }
     .button:hover { transform: translateY(-2px); background: #2563eb; }
     .button-secondary { border: 1px solid #cbd5e1; color: #0f172a; background: rgba(255,255,255,0.88); }
+    .animated { opacity: 0; animation: fadeIn 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .hero-panel.animated { animation: float 9s ease-in-out infinite alternate 0.35s, fadeIn 0.8s cubic-bezier(0.22,1,0.36,1) forwards 0.25s; }
+    .stat { padding: 22px 24px; background: #ffffff; border-radius: 24px; border: 1px solid #e2e8f0; opacity: 0; transform: translateY(18px); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .stat:nth-of-type(1) { animation-delay: 0.12s; }
+    .stat:nth-of-type(2) { animation-delay: 0.18s; }
+    .stat:nth-of-type(3) { animation-delay: 0.24s; }
+    .stat:nth-of-type(4) { animation-delay: 0.3s; }
     .hero-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 34px; }
-    .stat { padding: 22px 24px; background: #ffffff; border-radius: 24px; border: 1px solid #e2e8f0; }
     .stat strong { font-size: 2.2rem; display: block; color: #0f172a; }
     .stat span { color: #64748b; display: block; margin-top: 8px; }
     .hero-image { display: grid; place-items: center; }
@@ -77,7 +83,7 @@
 </head>
 <body>
   <div class="site">
-    <header class="nav">
+    <header class="nav animated">
       <div class="brand">Praveen <span>Mudumala</span></div>
       <nav class="nav-links">
         <a href="#about">About</a>
@@ -87,11 +93,11 @@
       </nav>
     </header>
 
-    <main class="hero">
+    <main class="hero animated">
       <div class="hero-copy">
         <div class="eyebrow">Java Lead • 7+ years</div>
         <h1 class="hero-title">Building enterprise Java systems with modern cloud-native architecture.</h1>
-        <p class="hero-text">I am a Java Lead with expertise in Spring Boot, microservices, AWS, Docker, and CI/CD. I deliver high-performance backend platforms, streamline engineering workflows, and drive scalable product outcomes.</p>
+        <p class="hero-text">I am a Java Lead with expertise in Spring Boot, microservices, AWS, Azure, Docker, and CI/CD. I deliver high-performance backend platforms, streamline engineering workflows, and drive scalable product outcomes.</p>
         <div class="hero-actions">
           <a class="button" href="portfolio.html">Explore portfolio</a>
           <a class="button-secondary" href="resume.html">View resume</a>
@@ -100,12 +106,12 @@
           <div class="stat"><strong>7+</strong><span>Years in Java engineering</span></div>
           <div class="stat"><strong>8</strong><span>Public repos</span></div>
           <div class="stat"><strong>100%</strong><span>Java backend delivery</span></div>
-          <div class="stat"><strong>20+</strong><span>APIs built</span></div>
+          <div class="stat"><strong>200+</strong><span>APIs built</span></div>
         </div>
       </div>
 
       <div class="hero-image">
-        <div class="hero-panel">
+        <div class="hero-panel animated">
           <div class="hero-panel-inner">
             <div class="card-highlight">
               <h3>Leadership + Delivery</h3>
@@ -114,6 +120,7 @@
                 <span class="badge">Spring Boot</span>
                 <span class="badge">Microservices</span>
                 <span class="badge">AWS</span>
+                <span class="badge">Azure</span>
                 <span class="badge">GitHub Actions</span>
               </div>
             </div>
@@ -143,7 +150,7 @@
         </div>
         <div class="info-cards">
           <div class="info-card"><h3>Enterprise systems</h3><p>Developing robust backend services for payment, logistics, and SaaS applications with secure, high-throughput architecture.</p></div>
-          <div class="info-card"><h3>Cloud-native delivery</h3><p>Implementing AWS-based workflows, Dockerized services, and GitHub Actions to automate staging, testing, and releases.</p></div>
+          <div class="info-card"><h3>Cloud-native delivery</h3><p>Implementing AWS and Azure-based workflows, Dockerized services, and GitHub Actions to automate staging, testing, and releases.</p></div>
           <div class="info-card"><h3>Mentorship</h3><p>Coaching engineers on clean code, test automation, and scalable system design to accelerate team performance.</p></div>
         </div>
       </div>
@@ -159,7 +166,7 @@
         <div class="stack-chip">Spring Boot</div>
         <div class="stack-chip">Spring Cloud</div>
         <div class="stack-chip">REST APIs</div>
-        <div class="stack-chip">AWS (ECS, Lambda)</div>
+        <div class="stack-chip">AWS & Azure</div>
         <div class="stack-chip">Docker / Kubernetes</div>
         <div class="stack-chip">GitHub Actions</div>
         <div class="stack-chip">MySQL / PostgreSQL</div>
@@ -191,7 +198,7 @@
         <div class="contact-item"><strong>GitHub</strong><a href="https://github.com/praveen4717" target="_blank" rel="noreferrer">github.com/praveen4717</a></div>
         <div class="contact-item"><strong>Location</strong><span>Bengaluru, India</span></div>
         <div class="contact-item"><strong>Company</strong><span>@mindsprint</span></div>
-        <div class="contact-item"><strong>Email</strong><span>your-email@example.com</span></div>
+        <div class="contact-item"><strong>Email</strong><span>mpraveen4717@gmail.com</span></div>
       </div>
     </section>
 
