@@ -3,25 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Praveen's Portfolio</title>
+  <title>Praveen Mudumala | GitHub Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; }
-    .profile-pic { width: 150px; border-radius: 50%; }
+    :root {
+      color-scheme: light;
+      color: #1f2937;
+      background: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; }
+    .page { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+    .hero { display: grid; gap: 24px; align-items: center; grid-template-columns: auto 1fr; padding: 32px 32px 24px; background: #ffffff; border-radius: 28px; box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08); }
+    .profile-pic { width: 140px; height: 140px; border-radius: 999px; object-fit: cover; border: 4px solid #e2e8f0; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 0.22em; color: #6366f1; font-size: 0.82rem; margin: 0 0 12px; }
+    h1 { margin: 0; font-size: clamp(2.5rem, 3vw, 3.6rem); line-height: 1.05; }
+    .lead { margin: 16px 0 0; font-size: 1.05rem; line-height: 1.8; color: #374151; }
+    .button { display: inline-flex; align-items: center; justify-content: center; margin-top: 24px; padding: 14px 22px; border-radius: 999px; background: #4338ca; color: #ffffff; text-decoration: none; font-weight: 600; transition: transform 0.2s ease, background 0.2s ease; }
+    .button:hover { background: #3730a3; transform: translateY(-1px); }
+    .section { margin-top: 40px; }
+    .section h2 { font-size: 1.35rem; margin-bottom: 18px; color: #111827; }
+    .section p { color: #4b5563; line-height: 1.75; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+    .stat-card { padding: 22px; background: #ffffff; border-radius: 20px; border: 1px solid #e5e7eb; }
+    .stat-card strong { display: block; font-size: 2rem; color: #111827; }
+    .stat-card span { color: #6b7280; margin-top: 8px; display: block; }
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card { padding: 22px; background: #ffffff; border-radius: 20px; border: 1px solid #e5e7eb; transition: transform 0.2s ease, border-color 0.2s ease; }
+    .card:hover { transform: translateY(-3px); border-color: #c7d2fe; }
+    .card h3 { margin: 0 0 10px; font-size: 1.1rem; }
+    .card a { color: #4338ca; text-decoration: none; }
+    .card p { margin: 0; color: #4b5563; line-height: 1.7; }
+    .contact-list { display: grid; gap: 12px; margin-top: 16px; }
+    .contact-item { display: flex; gap: 10px; align-items: baseline; color: #111827; }
+    .contact-item strong { min-width: 110px; color: #6b7280; }
+    footer { margin: 48px 0 0; text-align: center; color: #9ca3af; font-size: 0.95rem; }
+    @media (max-width: 720px) { .hero { grid-template-columns: 1fr; text-align: center; } .button { width: fit-content; margin-left: auto; margin-right: auto; } }
   </style>
 </head>
 <body>
-  <img src="https://avatars.githubusercontent.com/u/4717?v=4" alt="Profile picture" class="profile-pic">
-  <h1>Praveen</h1>
-  <p>Software Developer | Open Source Enthusiast</p>
-  <h2>About Me</h2>
-  <p>Brief bio about yourself goes here.</p>
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://github.com/praveen4717/project-1">Project 1</a> – Short description</li>
-    <li><a href="https://github.com/praveen4717/project-2">Project 2</a> – Short description</li>
-  </ul>
-  <h2>Contact</h2>
-  <p>Email: your-email@example.com</p>
-  <p>GitHub: <a href="https://github.com/praveen4717">praveen4717</a></p>
+  <div class="page">
+    <section class="hero">
+      <img src="https://avatars.githubusercontent.com/u/42336635?v=4" alt="Praveen Mudumala" class="profile-pic">
+      <div>
+        <p class="eyebrow">GitHub Portfolio</p>
+        <h1>Praveen Mudumala</h1>
+        <p class="lead">Software developer building open source projects, developer tools, and modern web experiences. Currently at <strong>@mindsprint</strong> in Bengaluru.</p>
+        <a class="button" href="https://github.com/praveen4717" target="_blank" rel="noreferrer">View GitHub profile</a>
+      </div>
+    </section>
+
+    <section class="section about">
+      <h2>About</h2>
+      <p>Hi! I'm Praveen, a software engineer with a focus on GitHub-backed projects and developer-friendly tooling. I enjoy creating clean web interfaces, API integrations, and code-focused workflows that help teams move faster.</p>
+      <div class="stats-grid">
+        <div class="stat-card"><strong>8</strong><span>Public repositories</span></div>
+        <div class="stat-card"><strong>0</strong><span>Followers</span></div>
+        <div class="stat-card"><strong>0</strong><span>Following</span></div>
+      </div>
+    </section>
+
+    <section class="section projects">
+      <h2>Featured projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://github.com/praveen4717/praveen4717.github.io" target="_blank" rel="noreferrer">praveen4717.github.io</a></h3>
+          <p>Personal GitHub Pages portfolio and homepage showcasing profile, projects, and contact details.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/praveen4717/openai" target="_blank" rel="noreferrer">openai</a></h3>
+          <p>A repository for experiments, integrations, or tools built around OpenAI APIs.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/praveen4717/multimodel" target="_blank" rel="noreferrer">multimodel</a></h3>
+          <p>Projects that work with multiple machine learning or generative AI models.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/praveen4717/ollama" target="_blank" rel="noreferrer">ollama</a></h3>
+          <p>Experiments and integrations centered on the Ollama model ecosystem.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/praveen4717/ems-frontend" target="_blank" rel="noreferrer">ems-frontend</a></h3>
+          <p>Frontend application work for an EMS or enterprise management system.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <h2>Connect</h2>
+      <div class="contact-list">
+        <div class="contact-item"><strong>GitHub</strong><a href="https://github.com/praveen4717" target="_blank" rel="noreferrer">github.com/praveen4717</a></div>
+        <div class="contact-item"><strong>Location</strong><span>Bengaluru, India</span></div>
+        <div class="contact-item"><strong>Company</strong><span>@mindsprint</span></div>
+      </div>
+    </section>
+
+    <footer>Portfolio generated from GitHub profile details.</footer>
+  </div>
 </body>
 </html>
